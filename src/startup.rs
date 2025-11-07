@@ -1,24 +1,9 @@
-//! src/lib.rs
-pub mod configuration;
-pub mod routes;
-pub mod startup;
-
 use actix_web::dev::Server;
-use actix_web::{App, HttpResponse, HttpServer, web};
+use actix_web::{App, HttpServer, web};
 use std::net::TcpListener;
 
-#[derive(serde::Deserialize)]
-struct FormData {
-    name: String,
-    email: String,
-}
+use crate::routes::{health_check, subscribe};
 
-pub async fn health_check() -> HttpResponse {
-    HttpResponse::Ok().finish()
-}
-pub async fn subscribe(_form: web::Form<FormData>) -> HttpResponse {
-    HttpResponse::Ok().finish()
-}
 // Notice the different signature!
 // We return `Server` on the happy path and we dropped the `async` keyword
 // We have no .await call, so it is not needed anymore.
