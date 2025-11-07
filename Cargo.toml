@@ -37,3 +37,6 @@ features = [
   "uuid",
   "migrate",
 ]
+
+[dev-dependencies]
+once_cell = "1"
