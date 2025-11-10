@@ -22,6 +22,7 @@ uuid = { version = "1", features = ["v4"] }
 tracing = { version = "0.1", features = ["log"] }
 tracing-bunyan-formatter = "0.3.10"
 tracing-log = "0.2.0"
+secrecy = { version = "0.10.3", features = ["serde"] }
 # We could use any path here, but we are following the community convention
 # We could specify a library name using the `name` field. If unspecified,
 # cargo will default to `package.name`, which is what we want.
